@@ -31,21 +31,7 @@ exports.up = function(knex) {
     tbl.string('amount', 128).notNullable()
     })
 };
-//   .createTable('step_ingredients', tbl => {
-//       tbl.increments('step_ingredients_id')
-//       tbl.integer('step_id')
-//         .unsigned()
-//         .notNullable()
-//         .references('step_id')
-//         .inTable('steps')
-//      tbl.integer('ingredient_id')
-//         .unsigned()
-//         .notNullable()
-//         .references('ingredient_id')
-//         .inTable('ingredients')
-//      tbl.string('quantity').notNullable()
-//   })
-// };
+
 
 exports.down = function(knex) {
   return knex.schema

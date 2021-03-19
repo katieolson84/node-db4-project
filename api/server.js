@@ -19,26 +19,13 @@ server.use("/", (req,res) => {
     res.json("Project Api")
 })
 
-module.exports = server;
-
-
-
-
-
-// const projectsRouter = require('./projects/projects-router');
-// const mw = require('./middleware/projectMiddleware');
-
-
-
-// server.use('/api/actions', actionsRouter);
-// server.use('/api/projects', mw.logger, projectsRouter);
-
 // middleware
-// server.use((err, req, res, next) => {
-//     res.status(500).json({
-//         message: err.message,
-//         stack: err.stack,
-//         custom: "Something is terribly wrong"
-//     })
-// })
-// export
+server.use((err, req, res, next) => {
+    res.status(500).json({
+        message: err.message,
+        stack: err.stack,
+        custom: "Something is terribly wrong"
+    })
+})
+
+module.exports = server;
